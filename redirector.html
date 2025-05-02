@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>App Redirect</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        function redirectToStore() {
+            const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+            
+            if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+                window.location.href = "https://apps.apple.com/in/app/blulines-learning/id6504708772"; 
+            }
+            
+            else if (/android/i.test(userAgent)) {
+                window.location.href = "https://play.google.com/store/apps/details?id=in.chemistry.blulines&pcampaignid=web_share"; 
+            }
+            
+            else {
+                window.location.href = "https://blulines.in"; 
+            }
+        }
+    </script>
+</head>
+
+<body style="display:flex;align-items:center;justify-content:center;height:100vh;margin:0;">
+    <button onclick="redirectToStore()" style="padding:1em 2em;font-size:1.2em;">Download App</button>
+</body>
+
+</html>
