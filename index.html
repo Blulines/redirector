@@ -1,31 +1,64 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-    <title>App Redirect</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script>
-        function redirectToStore() {
-            const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+<script>
+    const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+    if (/iPad|iPhone|iPod/.test(userAgent)) {
+        window.location.href = "https://apps.apple.com/in/app/blulines-learning/id6504708772";
+    } else if (/android/i.test(userAgent)) {
+        window.location.href = "https://play.google.com/store/apps/details?id=in.chemistry.blulines";
+    }
+</script>
 
-            
-            if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
-                window.location.href = "https://apps.apple.com/in/app/blulines-learning/id6504708772"; 
-            }
-            
-            else if (/android/i.test(userAgent)) {
-                window.location.href = "https://play.google.com/store/apps/details?id=in.chemistry.blulines&pcampaignid=web_share"; 
-            }
-            
-            else {
-                window.location.href = "https://blulines.in"; 
-            }
-        }
-    </script>
+<head>
+    <title>Blulines.in</title>
+    <link rel="icon" type="image/x-icon" href="./icon.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
-<body style="display:flex;align-items:center;justify-content:center;height:100vh;margin:0;">
-    <button onclick="redirectToStore()" style="padding:1em 2em;font-size:1.2em;">Download App</button>
+<body>
+    <div class="main">
+        <div class="logo">
+            <img src="./logo.svg" alt="Blulines.in">
+        </div>
+        <div class="stores">
+            <a href="https://play.google.com/store/apps/details?id=in.chemistry.blulines&pcampaignid=web_share">
+                <img src="./playstore.svg" alt="Download for Android">
+            </a>
+            <a href="https://apps.apple.com/in/app/blulines-learning/id6504708772">
+                <img src="./appstore.svg" alt="Download for Apple">
+            </a>
+        </div>
+    </div>
+
 </body>
+
+<style>
+    body {
+        background: #867DEE;
+        background: radial-gradient(circle, rgba(134, 125, 238, 1) 0%, rgba(3, 0, 28, 1) 100%);
+        ;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 90vh;
+        margin: 0;
+    }
+
+    .logo img {
+        width: 100% !important;
+    }
+
+    .stores {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .stores img {
+        width: 19vh;
+        filter: drop-shadow(0px 0px 20px #b7b1fb);
+        margin: 10px;
+    }
+</style>
 
 </html>
