@@ -1,64 +1,178 @@
 <!DOCTYPE html>
-<html>
-
-<script>
-    const userAgent = navigator.userAgent || navigator.vendor || window.opera;
-    if (/iPad|iPhone|iPod/.test(userAgent)) {
-        window.location.href = "https://apps.apple.com/in/app/blulines-learning/id6504708772";
-    } else if (/android/i.test(userAgent)) {
-        window.location.href = "https://play.google.com/store/apps/details?id=in.chemistry.blulines";
-    }
-</script>
+<html lang="en">
 
 <head>
-    <title>Blulines.in</title>
-    <link rel="icon" type="image/x-icon" href="./icon.svg">
+    <meta charset="UTF-8">
+    <title>Blulines</title>
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/x-icon" href="./icon.svg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <script>
+        const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+        if (/iPad|iPhone|iPod/.test(userAgent)) {
+            window.location.href = "https://apps.apple.com/in/app/blulines-learning/id6504708772";
+        } else if (/android/i.test(userAgent)) {
+            window.location.href = "https://play.google.com/store/apps/details?id=in.chemistry.blulines";
+        }
+    </script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Inter, Arial, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 24px;
+
+            background:
+                radial-gradient(circle at top,
+                    #214b8f 0%,
+                    #0f2346 18%,
+                    #081426 40%,
+                    #050b17 100%);
+        }
+
+        .main {
+            width: 440px;
+            max-width: calc(100% - 40px);
+
+            padding: 42px;
+
+            text-align: center;
+
+            border-radius: 24px;
+
+            background: linear-gradient(180deg, #182844, #0d1729);
+
+            border: 1px solid rgba(95, 140, 255, .18);
+
+            box-shadow: 0 20px 55px rgba(0, 0, 0, .45);
+        }
+
+        .logo img {
+            width: 240px;
+            max-width: 100%;
+        }
+
+        .content {
+            margin: 28px 0 34px;
+        }
+
+        .content h2 {
+            color: #9fb6da;
+            font-size: 30px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .content p {
+            color: #9fb6da;
+            font-size: 15px;
+            line-height: 1.7;
+        }
+
+        .stores {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 16px;
+            margin-top: 30px;
+        }
+
+        .stores a {
+            flex: 1;
+            max-width: 170px;
+            transition: .25s;
+        }
+
+        .stores a:hover {
+            transform: translateY(-4px);
+        }
+
+        .stores img {
+            width: 100%;
+            display: block;
+            filter: drop-shadow(0 8px 18px rgba(0, 0, 0, .35));
+        }
+
+        @media (max-width:500px) {
+
+            .main {
+                padding: 30px 22px;
+            }
+
+            .logo img {
+                width: 200px;
+            }
+
+            .content {
+                margin: 24px 0 28px;
+            }
+
+            .content h2 {
+                font-size: 26px;
+            }
+
+            .content p {
+                font-size: 14px;
+            }
+
+            /* Keep badges in one row */
+            .stores {
+                gap: 12px;
+            }
+
+            .stores a {
+                max-width: 145px;
+            }
+        }
+    </style>
+
 </head>
 
 <body>
+
     <div class="main">
+
         <div class="logo">
-            <img src="./logo.svg" alt="Blulines.in">
+            <img src="./logo.svg" alt="Blulines">
         </div>
+
+        <div class="content">
+            <h2>Download Blulines</h2>
+
+            <p>
+                Get the best learning experience with the Blulines mobile app.
+            </p>
+        </div>
+
         <div class="stores">
+
             <a href="https://play.google.com/store/apps/details?id=in.chemistry.blulines&pcampaignid=web_share">
                 <img src="./playstore.svg" alt="Download for Android">
             </a>
+
             <a href="https://apps.apple.com/in/app/blulines-learning/id6504708772">
                 <img src="./appstore.svg" alt="Download for Apple">
             </a>
+
         </div>
+
     </div>
 
 </body>
-
-<style>
-    body {
-        background: #867DEE;
-        background: radial-gradient(circle, rgba(134, 125, 238, 1) 0%, rgba(3, 0, 28, 1) 100%);
-        ;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 90vh;
-        margin: 0;
-    }
-
-    .logo img {
-        width: 100% !important;
-    }
-
-    .stores {
-        display: flex;
-        justify-content: space-between;
-    }
-
-    .stores img {
-        width: 19vh;
-        filter: drop-shadow(0px 0px 20px #b7b1fb);
-        margin: 10px;
-    }
-</style>
 
 </html>
